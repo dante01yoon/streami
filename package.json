@@ -2,19 +2,33 @@
   "name": "coinbit",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
+	"license": "MIT",
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@types/styled-components": "^5.1.0",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
+    "mobx-react-lite": "^2.0.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "source-map-loader": "^0.2.4",
     "styled-components": "^5.1.0",
     "ts-loader": "^7.0.0",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "devDependencies": {
     "typescript": "^3.8.3"
-  }
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --open --hot",
+    "debug": "webpack --display-error-details",
+    "build": "webpack -w",
+    "start": "webpack --mode development"
+	}
 }
