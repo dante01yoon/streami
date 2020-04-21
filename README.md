@@ -1,5 +1,7 @@
 #### Streami web assignment with react.js 
 
+#### Stack
+ react.js mobx mobx-react-lite styled-components 
 #### built by jaewon Yoon 
 
 #### how to launch 
