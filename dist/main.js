@@ -39340,8 +39340,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/axios/index.js"));
-const baseURL = 'https://api.gopax.co.kr';
-// const baseURL = '/api';
+// const baseURL = 'https://api.gopax.co.kr'; 
+const baseURL = '/send';
 const gopaxAxios = axios_1.default.create({
     baseURL
 });
@@ -39356,7 +39356,7 @@ const request = (config) => __awaiter(void 0, void 0, void 0, function* () {
 });
 const GET = (url, params, config) => request(Object.assign(Object.assign({}, config), { method: 'GET', url,
     params, withCredentials: true, headers: {
-        "accepts": "application/jsonp"
+        "Accept": "application/jsonp"
     } }));
 exports.http = { GET };
 

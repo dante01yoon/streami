@@ -1,3 +1,6 @@
+const proxy_headers = {
+	'X-Forwarded-For': ''
+}
 const path = require('path'); 
 module.exports = {
 	mode: 'development', 
@@ -39,15 +42,12 @@ module.exports = {
 		inline: true,
 		host: "localhost",
 		publicPath: '/dist',
-		headers: {
-			"Access-Control-Allow-Origin": "*",
-			"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-			"Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-		},
 		proxy: {
-			'/send': {
+			'/send/**': {
 				target: "https://api.gopax.co.kr",
-				changeOrigin: true,
+				pathRewrite: {'^/send' : ''},
+				secure: false, 
+				changeOrigin: true
 			},
 		},
 		historyApiFallback: true,

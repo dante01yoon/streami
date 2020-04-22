@@ -3,8 +3,8 @@ import {
 	APIResponse
 } from './types'; 
 
-const baseURL = 'https://api.gopax.co.kr'; 
-// const baseURL = '/api';
+// const baseURL = 'https://api.gopax.co.kr'; 
+const baseURL = '/send';
 const gopaxAxios: AxiosInstance = axios.create({
 	baseURL
 })
@@ -26,7 +26,7 @@ const GET = <T>(url: string, params?: object, config?: AxiosRequestConfig): Prom
 		params, 
 		withCredentials:true,
 		headers: {
-			"accepts":"application/jsonp"
+			"Accept":"application/jsonp"
 		}
 	}); 
 
