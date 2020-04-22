@@ -23,11 +23,7 @@ const GET = <T>(url: string, params?: object, config?: AxiosRequestConfig): Prom
 		...config, 
 		method: 'GET', 
 		url, 
-		params, 
-		withCredentials:true,
-		headers: {
-			"Accept":"application/jsonp"
-		}
+		params 
 	}); 
 
 export const http = { GET }; 

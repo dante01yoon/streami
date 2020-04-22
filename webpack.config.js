@@ -46,7 +46,6 @@ module.exports = {
 			'/send/**': {
 				target: "https://api.gopax.co.kr",
 				pathRewrite: {'^/send' : ''},
-				secure: false, 
 				changeOrigin: true
 			},
 		},

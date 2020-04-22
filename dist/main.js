@@ -39355,9 +39355,7 @@ const request = (config) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 const GET = (url, params, config) => request(Object.assign(Object.assign({}, config), { method: 'GET', url,
-    params, withCredentials: true, headers: {
-        "Accept": "application/jsonp"
-    } }));
+    params }));
 exports.http = { GET };
 
 
@@ -39691,7 +39689,9 @@ const api_1 = __webpack_require__(/*! api */ "./src/api/index.ts");
 class StatStore extends APIStore_1.APIStore {
     constructor(rootStore) {
         super();
-        this.alignElement = "empty";
+        this.alignClicked = false;
+        this.clickedAlign = "name";
+        this.alignStatus = "up";
         this.statData = [];
         this.rootStore = rootStore;
     }
@@ -39700,13 +39700,6 @@ class StatStore extends APIStore_1.APIStore {
             this.onRequest();
             try {
                 const [, data] = yield api_1.requestStats();
-                // const [, data] = await axios.get('/send/trading-pairs/stats',{
-                // 	proxy: {
-                // 		host: "https://api.gopax.co.kr",
-                // 		port: 8080
-                // 	},
-                // 	withCredentials:true
-                // });
                 this.statData = data !== null && data !== void 0 ? data : [];
             }
             catch (error) {
@@ -39715,16 +39708,39 @@ class StatStore extends APIStore_1.APIStore {
             this.onSuccess();
         });
     }
+    get alignedData() {
+        if (this.alignClicked && this.alignedData) {
+            switch (this.clickedAlign) {
+                case 'name':
+                    for (let eachData of this.alignedData) {
+                    }
+                    return this.statData;
+                case 'up':
+                    return this.statData;
+                case 'down':
+                    return this.statData;
+            }
+        }
+    }
 }
 __decorate([
     mobx_1.observable
-], StatStore.prototype, "alignElement", void 0);
+], StatStore.prototype, "alignClicked", void 0);
+__decorate([
+    mobx_1.observable
+], StatStore.prototype, "clickedAlign", void 0);
+__decorate([
+    mobx_1.observable
+], StatStore.prototype, "alignStatus", void 0);
 __decorate([
     mobx_1.observable
 ], StatStore.prototype, "statData", void 0);
 __decorate([
     mobx_1.action.bound
 ], StatStore.prototype, "requestData", null);
+__decorate([
+    mobx_1.computed
+], StatStore.prototype, "alignedData", null);
 exports.StatStore = StatStore;
 
 
