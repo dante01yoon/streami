@@ -1,25 +1,21 @@
 Arguments: 
-  /Users/jaewon/n/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js build
+  C:\Program Files\nodejs\node.exe C:\Users\jaewon\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/jaewon/n/bin
+  C:\Users\jaewon\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jaewon\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\PuTTY;C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\jaewon\AppData\Local\Microsoft\WindowsApps;C:\Users\jaewon\AppData\Roaming\npm;C:\Program Files\Bandizip;C:\Users\jaewon\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jaewon\AppData\Local\Programs\Python\Python37-32;C:\Users\jaewon\AppData\Local\atom\bin;C:\Program Files\heroku\bin;C:\src\flutter\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
-  1.21.1
+  1.17.3
 
 Node version: 
-  12.14.1
+  10.16.3
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  SyntaxError: /Users/jaewon/Desktop/github/streami/package.json: Unexpected token } in JSON at position 918
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:310:30)
-      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:321:13
+  Error: getaddrinfo ENOTFOUND nexus.msa.swarm nexus.msa.swarm:8081
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:56:26)
 
 npm manifest: 
   {
@@ -27,7 +23,6 @@ npm manifest:
     "version": "1.0.0",
     "main": "index.js",
   	"license": "MIT",
-  	"proxy": "http://api.gopax.co.kr",
     "dependencies": {
       "@types/axios": "^0.14.0",
       "@types/react": "^16.9.34",
@@ -55,7 +50,7 @@ npm manifest:
       "debug": "webpack --display-error-details",
       "build": "webpack -w",
       "start": "webpack --mode development"
-  	},
+  	}
   }
 
 yarn manifest: 

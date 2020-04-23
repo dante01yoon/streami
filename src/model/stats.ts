@@ -7,3 +7,9 @@ export type StatType = {
 	volume: number,
 	time: string
 }
+
+export type EditStatType = Pick<StatType, 'name' | 'high' | 'low'> & {
+	price: number, 
+	change: number
+}
+
