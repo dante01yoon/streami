@@ -46,15 +46,21 @@ export class EditStore extends APIStore{
 		if(this.alignClicked && this.alignedData){
 			switch(this.clickedAlign){
 				case 'name':
-					for( let eachData of this.alignedData){
-						
-					}
+					this.statData?.sort((a,b) =>{
+						return a.name < b.name ? 1: a.name > b.name ? -1 : 0; 
+					})
 					return this.statData;
-				case 'up': 
+				case 'price': 
 					return this.statData;
-				case 'down':
+				case 'change':
+					return this.statData;
+				case 'high':
+					return this.statData;
+				case 'low':
+					return this.statData;
+				case 'pool':
 					return this.statData; 
-			}
+			} 
 		}
 	}
 } 
