@@ -10,6 +10,7 @@ export type StatType = {
 
 export type EditStatType = Pick<StatType, 'name' | 'high' | 'low'> & {
 	price: number, 
-	change: number
+	change: number,
+	pool: number 
 }
 

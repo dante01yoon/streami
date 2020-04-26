@@ -50,15 +50,31 @@ export class EditStore extends APIStore{
 						return a.name < b.name ? 1: a.name > b.name ? -1 : 0; 
 					})
 					return this.statData;
-				case 'price': 
+				case 'price':
+					this.statData?.sort((a,b) => {
+						return a.price < b.price ? 1: a.price > b.price ? -1 : 0; 
+					})
 					return this.statData;
 				case 'change':
+					this.statData?.sort((a,b) => {
+						return a.change < b.change ? 1: a.change > b.change ? -1 : 0; 
+					})
 					return this.statData;
 				case 'high':
+					this.statData?.sort((a,b) => {
+						return a.high < b.high ? 1: a.high > b.high ? -1 : 0; 
+					})
 					return this.statData;
 				case 'low':
+					this.statData?.sort((a,b) => {
+						return a.low < b.low ? 1: a.low > b.low ? -1 : 0; 
+					})
 					return this.statData;
 				case 'pool':
+					this.statData?.sort((a,b) => {
+						return a.pool < b.pool ? 1: a.pool > b.pool
+						 ? -1 : 0; 
+					})
 					return this.statData; 
 			} 
 		}

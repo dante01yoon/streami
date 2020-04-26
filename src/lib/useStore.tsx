@@ -1,9 +1,10 @@
 import React, { FC ,useContext, createContext } from 'react';
 import { useLocalStore} from 'mobx-react-lite';
 import { StatStore } from 'store/StatStore';
-
+import { EditStore } from 'store/EditStore';
 export type RootStore = {
-	stat: StatStore
+	stat: StatStore,
+	edit: EditStore
 }
 
 export type StoreKeys = keyof RootStore; 

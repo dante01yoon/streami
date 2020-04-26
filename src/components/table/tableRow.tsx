@@ -4,21 +4,24 @@ import {
 	StyledTd,
 } from './style'; 
 import { observer } from 'mobx-react-lite';
-import { StatType } from 'model';
+import { EditStatType } from 'model';
 
 export const TableRow: FC<{
-	statData: StatType
+	statData: EditStatType
 }> = observer(({
 	statData
 }) => {
-	const { name, open, high, low, close, volume, time} = statData; 
+	const { name, high, low, price, change, pool} = statData; 
 	return(
 		<StyledTr>
 			<StyledTd>
 				{name}
 			</StyledTd>
 			<StyledTd>
-				{open}
+				{price}
+			</StyledTd>
+			<StyledTd>
+				{change}
 			</StyledTd>
 			<StyledTd>
 				{high}
@@ -27,10 +30,7 @@ export const TableRow: FC<{
 				{low}
 			</StyledTd>
 			<StyledTd>
-				{close}
-			</StyledTd>
-			<StyledTd>
-				{volume}
+				{pool}
 			</StyledTd>
 		</StyledTr>
 	)
