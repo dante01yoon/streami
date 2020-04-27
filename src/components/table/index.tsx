@@ -1,21 +1,22 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useStore } from 'lib/useStore'; 
 import { TableRow } from 'components/table/tableRow';
 import {
 	StyledTable,
 	StyledThead,
 	StyledTh,
 	StyledTbody,
-	StyledTr,
-	StyledTd
+	StyledTr
 } from './style';
-export const Table: FC = observer(() =>{
-	const edit = useStore('edit'); 
-	useEffect(()=> {
-		edit.requestData(); 
-	},[])
-	const { statData } = edit; 
+import { EditStatType } from 'model';
+export const Table: FC<{
+	statData: EditStatType[]
+}> = observer(({
+	statData
+}) =>{
+	const onClick = () => {
+		
+	}
 	return(
 		<StyledTable summary={"represent present coin price"}>
 			<StyledThead>

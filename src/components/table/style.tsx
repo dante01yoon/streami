@@ -6,7 +6,7 @@ export const StyledTable = styled.table`
 	border: 1px solid black; 
 `
 export const StyledThead = styled.thead`
-	
+	background-color: ${p=> p.theme.colors.whiteBlack}; 
 `
 
 export const StyledTh = styled.th`

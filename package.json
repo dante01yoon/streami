@@ -17,6 +17,7 @@
     "react-dom": "^16.13.1",
     "source-map-loader": "^0.2.4",
     "styled-components": "^5.1.0",
+    "styled-reset": "^4.1.4",
     "ts-loader": "^7.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
