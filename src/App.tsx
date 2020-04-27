@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
 import { StoreProvider } from 'lib/useStore';
 import { Table } from 'components/table';
+import { GopaxStyleProvider} from 'theme'; 
 export const App : FC = () =>{
 	return(
-		<StoreProvider>
-			<Table/> 
-		</StoreProvider>
+		<GopaxStyleProvider>
+			<StoreProvider>
+				<Table/> 
+			</StoreProvider>
+		</GopaxStyleProvider>
 	)
 }

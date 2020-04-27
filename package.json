@@ -2,7 +2,7 @@
   "name": "coinbit",
   "version": "1.0.0",
   "main": "index.js",
-	"license": "MIT",
+  "license": "MIT",
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/react": "^16.9.34",
@@ -30,5 +30,5 @@
     "debug": "webpack --display-error-details",
     "build": "webpack -w",
     "start": "webpack --mode development"
-	}
+  }
 }
