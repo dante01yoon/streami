@@ -1,15 +1,21 @@
-import { StatType } from "model"
+import { StatType, EditStatType } from "model"
 import { 
 	AlignElement, 
 	AlignStatus
-} from "store/StatStore"; 
-export const alignDataByTag = (tag: AlignElement, originalData:StatType[], status: AlignStatus ) => {
+} from "store/EditStore"; 
+export const alignDataByTag = (
+	tag: AlignElement, originalData:EditStatType[], status: AlignStatus 
+) => {
 	if( tag && originalData) {
 		if(status === "up"){
-			originalData.sort(function(a,b){
-					a.tag < b.tag  			
-			})
+			originalData.sort((a,b) => {
+				if(a[tag] < b[tag])
+					return 1; 
+				else
+					return -1; 
 			}
+		)
+		}
 		else {
 		console.error("tag or originalData not exists"); 
 		}

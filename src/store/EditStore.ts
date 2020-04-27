@@ -15,7 +15,7 @@ export class EditStore extends APIStore{
   @observable alignClicked: boolean = false; 
 	@observable clickedAlign: AlignElement =  "name"; 
 	@observable alignStatus: AlignStatus = "up"; 
-  @observable statData: EditStatType[] = []; 
+	@observable statData: EditStatType[] = []; 
   constructor(rootStore: RootStore){
     super();
     this.rootStore = rootStore; 
@@ -30,7 +30,7 @@ export class EditStore extends APIStore{
 			return {
 				name: value.name,
 				price: value.close,
-				change: parseInt(((value.close - value.open) / value.close * 100).toFixed(2)), 
+				change:((value.close - value.open) / value.open *100).toFixed(2) , 
 				high: value.high,
 				low: value.low,
 				pool: value.volume

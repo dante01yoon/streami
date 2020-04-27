@@ -11,11 +11,11 @@ import {
 	StyledTd
 } from './style';
 export const Table: FC = observer(() =>{
-	const stat = useStore('stat'); 
+	const edit = useStore('edit'); 
 	useEffect(()=> {
-		stat.requestData(); 
+		edit.requestData(); 
 	},[])
-	const { statData } = stat;
+	const { statData } = edit; 
 	return(
 		<StyledTable summary={"represent present coin price"}>
 			<StyledThead>

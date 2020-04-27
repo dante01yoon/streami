@@ -21,7 +21,7 @@ export const TableRow: FC<{
 				{price}
 			</StyledTd>
 			<StyledTd>
-				{change}
+				{change}%
 			</StyledTd>
 			<StyledTd>
 				{high}

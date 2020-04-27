@@ -14,7 +14,7 @@ const storeContext = createContext<RootStore | null>(null);
 const initialStore = (): RootStore => {
 	const rootStore: RootStore = {} as RootStore; 
 	rootStore.stat = new StatStore(rootStore); 
-
+	rootStore.edit = new EditStore(rootStore);
 	return rootStore; 
 }
 
