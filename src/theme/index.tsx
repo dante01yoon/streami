@@ -15,7 +15,7 @@ export const GopaxResetStyle = createGlobalStyle`
     color:inherit;
   }
   *{
-    box-sizing:boerder-box;
+    box-sizing:border-box;
   }
 `
 export const GopaxStyleProvider: FC<{

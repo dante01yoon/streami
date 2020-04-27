@@ -6,7 +6,8 @@ import {
 	StyledThead,
 	StyledTh,
 	StyledTbody,
-	StyledTr
+	StyledTr,
+	StyledTheadDiv
 } from './style';
 import { EditStatType } from 'model';
 export const Table: FC<{
@@ -22,7 +23,9 @@ export const Table: FC<{
 			<StyledThead>
 				<StyledTr>
 					<StyledTh>
-						이름	
+						<StyledTheadDiv>
+							이름	
+						</StyledTheadDiv>	
 					</StyledTh>
 					<StyledTh>
 						현재가	
