@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import { observer } from 'mobx-react-lite';
 import { TableRow } from 'components/table/tableRow';
+import { ThContainer } from 'components/Thead';
 import {
 	StyledTable,
 	StyledThead,
 	StyledTh,
 	StyledTbody,
 	StyledTr,
-	StyledTheadDiv
 } from './style';
 import { EditStatType } from 'model';
 export const Table: FC<{
@@ -15,33 +15,21 @@ export const Table: FC<{
 }> = observer(({
 	statData
 }) =>{
-	const onClick = () => {
+	const TheadValue:string[] = ['이름', '현재가', '변동','최고가', '최저가','거래대금'];
+	const onClick = (event: MouseEvent<HTMLDivElement> ) => {
 		
 	}
 	return(
 		<StyledTable summary={"represent present coin price"}>
 			<StyledThead>
 				<StyledTr>
-					<StyledTh>
-						<StyledTheadDiv>
-							이름	
-						</StyledTheadDiv>	
-					</StyledTh>
-					<StyledTh>
-						현재가	
-					</StyledTh>
-					<StyledTh>
-						변동	
-					</StyledTh>
-					<StyledTh>
-						최고가	
-					</StyledTh>
-					<StyledTh>
-						최저가	
-					</StyledTh>
-					<StyledTh>
-						거래대금	
-					</StyledTh>
+					{
+						TheadValue?.map((value,index) => {
+							return (
+								<ThContainer value ={value} active={false} onClick={onClick} key={index} /> 
+							)
+						})
+					}
 				</StyledTr>
 			</StyledThead>
 			<StyledTbody>
