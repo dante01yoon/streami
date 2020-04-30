@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const StyledTable = styled.table`
 	border-collapse: collapse;
 	border: 1px solid black; 
+	margin: 0 auto;
 `
 export const StyledThead = styled.thead`
 	
@@ -23,7 +24,7 @@ export const StyledTh = styled.th<{
 		p.theme.colors.darkWhite }  
 	padding: 5px;
 	border: 1px solid black;
-	width: 206px; 
+	width: 150px; 
 `
 export const StyledTbody = styled.tbody`
 `
@@ -32,7 +33,7 @@ export const StyledTr = styled.tr`
 export const StyledTd = styled.td`
 	color: ${p=>p.theme.colors.darkWhite};
 	border: 1px solid black;
-	width: 206px; 
+	width: 150px; 
 	height: 40px; 
 	vertical-align: middle;
 	text-align: center;
