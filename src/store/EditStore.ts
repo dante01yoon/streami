@@ -14,7 +14,7 @@ export type ClickedAlign = {
 export class EditStore extends APIStore{
   @observable alignClicked: boolean = false; 
 	@observable clickedAlign: AlignElement =  "name"; 
-	@observable alignStatus: AlignStatus = "up"; 
+	@observable alignStatus: AlignStatus = "off"; 
 	@observable statData: EditStatType[] = []; 
   constructor(rootStore: RootStore){
     super();
@@ -41,7 +41,24 @@ export class EditStore extends APIStore{
 		}
 		this.onSuccess(); 
   }
-  
+	
+	@action.bound
+	async changeAlignStatus(){
+		this.alignClicked=true;
+		switch(this.alignStatus){
+			case 'up':
+				this.alignStatus='off';
+				break;
+			case 'off':
+				this.alignStatus='up';
+				break;
+			case 'down':
+				this.alignStatus='down';
+				break;
+			default:
+				this.alignStatus='off'; 
+		}
+	}
   @computed get alignedData() {
 		if(this.alignClicked && this.alignedData){
 			switch(this.clickedAlign){

@@ -5,7 +5,6 @@ import { ThContainer } from 'components/Thead';
 import {
 	StyledTable,
 	StyledThead,
-	StyledTh,
 	StyledTbody,
 	StyledTr,
 } from './style';
