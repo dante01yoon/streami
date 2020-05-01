@@ -6,9 +6,12 @@ import { StatType, EditStatType } from 'model'
 
 export type AlignElement = "name" | "price" | "change" | "high" | "low" | "pool";
 export type AlignStatus = "up" | "down" | "off";  
-type ClickedKey = keyof StatType;
+type ClickedKey = keyof EditStatType;
 export type ClickedAlign = {
-	[key in ClickedKey]: AlignStatus;
+	[key in ClickedKey]:{
+		alignStatus: AlignStatus,
+		clicked: boolean
+	};
 };
 
 export class EditStore extends APIStore{
@@ -16,6 +19,7 @@ export class EditStore extends APIStore{
 	@observable clickedAlign: AlignElement =  "name"; 
 	@observable alignStatus: AlignStatus = "off"; 
 	@observable statData: EditStatType[] = []; 
+	@observable clickedAlignStatus: ClickedAlign = {} as ClickedAlign;  
   constructor(rootStore: RootStore){
     super();
     this.rootStore = rootStore; 
@@ -43,8 +47,9 @@ export class EditStore extends APIStore{
   }
 	
 	@action.bound
-	async changeAlignStatus(){
+	async changeAlignStatus(value: AlignElement){
 		this.alignClicked=true;
+		
 		switch(this.alignStatus){
 			case 'up':
 				this.alignStatus='off';
@@ -60,39 +65,11 @@ export class EditStore extends APIStore{
 		}
 	}
   @computed get alignedData() {
-		if(this.alignClicked && this.alignedData){
+		if(this.alignClicked){
+			let clickedElement : AlignElement ='name'; 
+			let clickedStatus: AlignStatus = this.clickedAlignStatus[clickedElement];
 			switch(this.clickedAlign){
-				case 'name':
-					this.statData?.sort((a,b) =>{
-						return a.name < b.name ? 1: a.name > b.name ? -1 : 0; 
-					})
-					return this.statData;
-				case 'price':
-					this.statData?.sort((a,b) => {
-						return a.price < b.price ? 1: a.price > b.price ? -1 : 0; 
-					})
-					return this.statData;
-				case 'change':
-					this.statData?.sort((a,b) => {
-						return a.change < b.change ? 1: a.change > b.change ? -1 : 0; 
-					})
-					return this.statData;
-				case 'high':
-					this.statData?.sort((a,b) => {
-						return a.high < b.high ? 1: a.high > b.high ? -1 : 0; 
-					})
-					return this.statData;
-				case 'low':
-					this.statData?.sort((a,b) => {
-						return a.low < b.low ? 1: a.low > b.low ? -1 : 0; 
-					})
-					return this.statData;
-				case 'pool':
-					this.statData?.sort((a,b) => {
-						return a.pool < b.pool ? 1: a.pool > b.pool
-						 ? -1 : 0; 
-					})
-					return this.statData; 
+				
 			} 
 		}
 	}
